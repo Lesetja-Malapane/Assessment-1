@@ -1,4 +1,4 @@
-def grade_average(grades):
+def grade_average(grades:list):
     """ Write a program that returns the average number of a given list of grades.
     It should not add any negative grades to the average.
 
@@ -6,6 +6,29 @@ def grade_average(grades):
         grades (list): List of grades to calculate
     """
 
+    average = 0
+
+    for digit in grades:
+        if digit < 0:
+            grades.remove(digit)
+
+    for number in grades:
+
+        if number >= 0:
+            average = average + number
+            continue
+            
+        elif number < 0:
+            grades.remove(number)
+            continue
+            
+        else:
+            continue
+        
+    if average > 0:
+        return (average)/(len(grades))
+    else:
+        return average
 
 def find_prime_factors(number):
     """Write code to return the prime factors of the number. 
@@ -13,6 +36,9 @@ def find_prime_factors(number):
     Args:
         number (int): Number to find the prime factors of
     """
+
+    for digit in range(1, number):
+        if   
 
 
 def calculate_interest(principal, rate, years):
@@ -35,6 +61,42 @@ def code_word(code):
         code (list): The code to decipher
     """
 
+    letter = {
+        0: " ",
+        1: "a",
+        2: "b",
+        3: "c",
+        4: "d",
+        5: "e",
+        6: "f",
+        7: "g",
+        8: "h",
+        9: "i",
+        10: "j",
+        11: "k",
+        12: "l",
+        13: "m",
+        14: "n",
+        15: "o",
+        16: "p",
+        17: "q",
+        18: "r",
+        19: "s",
+        20: "t",
+        21: "u",
+        22: "v",
+        23: "w",
+        24: "x",
+        25: "y",
+        26: "z"
+    }
+
+    string = ""
+
+    for number in code:
+        string = string +letter[number]
+
+    return string
 
 def triangles(length):
     """Write a program that returns a triangle of a certain length
